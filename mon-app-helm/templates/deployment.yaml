@@ -1,19 +1,19 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: nginx-deployment
+  name: {{ .Release.Name }}-deployment
 spec:
-  replicas: 2
+  replicas: {{ .Values.replicaCount }}
   selector:
     matchLabels:
-      app: backend
+      app: {{ .Values.service.name }}
   template:
     metadata:
       labels:
-        app: backend
+        app: {{ .Values.service.name }}
     spec:
       containers:
       - name: nginx
-        image: nginx:stable
+        image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
         ports:
         - containerPort: 80

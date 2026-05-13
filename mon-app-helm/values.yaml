@@ -1,0 +1,10 @@
+# Ce fichier contient les réglages par défaut
+replicaCount: 1
+
+image:
+  repository: nginx
+  tag: stable
+
+service:
+  port: 30080
+  name: backend
