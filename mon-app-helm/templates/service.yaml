@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: nginx-service
+  name: {{ .Values.service.name }}-service
 spec:
   selector:
     app: backend  # Doit correspondre exactement au label de ton Deployment
@@ -9,5 +9,5 @@ spec:
     - protocol: TCP
       port: 80          # Port interne du service
       targetPort: 80    # Port du conteneur Nginx
-      nodePort: 30080   # Port d'accès sur ton Ubuntu
+      nodePort: {{ .Values.service.port }}   # Port d'accès sur ton Ubuntu
   type: NodePort
