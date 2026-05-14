@@ -1,0 +1,6 @@
+replicaCount: 1
+image:
+  tag: alpine  # Version légère pour le dev
+service:
+  name: nginx-dev
+  port: 30081

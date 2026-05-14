@@ -1,0 +1,6 @@
+replicaCount: 3  # Plus de puissance pour la prod
+image:
+  tag: stable
+service:
+  name: nginx-prod
+  port: 30082
