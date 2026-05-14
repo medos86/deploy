@@ -4,7 +4,7 @@ metadata:
   name: {{ .Values.service.name }}-service
 spec:
   selector:
-    app: backend  # Doit correspondre exactement au label de ton Deployment
+    app: {{ .Values.service.name }}  # Doit correspondre exactement au label de ton Deployment
   ports:
     - protocol: TCP
       port: 80          # Port interne du service
